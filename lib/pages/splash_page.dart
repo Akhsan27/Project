@@ -13,20 +13,21 @@ class SplashPage extends StatelessWidget {
           child: Stack(
             children: [
               Positioned(
-                  top: 40,
-                  left: 0,
-                  right: 0,
-                  child: Image.asset('assets/l-splash.png')),
+                top: 60,
+                left: 0,
+                right: 0,
+                child: Image.asset('assets/l-splash.png'),
+              ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Container(
                     margin: const EdgeInsets.symmetric(horizontal: 15),
-                    padding: const EdgeInsets.all(15),
+                    padding: const EdgeInsets.all(20),
                     height: MediaQuery.of(context).size.height * 0.4,
                     decoration: BoxDecoration(
                       color: Colors.white,
-                      borderRadius: BorderRadius.circular(12),
+                      borderRadius: BorderRadius.circular(16),
                     ),
                     child: Column(
                       children: [
@@ -34,7 +35,7 @@ class SplashPage extends StatelessWidget {
                         Image.asset('assets/acx.png'),
                         const SizedBox(height: 15),
                         Text(
-                          'Management Expens',
+                          'Saving Yor Money',
                           style: Theme.of(context)
                               .textTheme
                               .headlineLarge
@@ -45,7 +46,8 @@ class SplashPage extends StatelessWidget {
                         const SizedBox(height: 20),
                         Text(
                           'Selamat Datang di aplikasi pengolahan anggaran',
-                          style: Theme.of(context).textTheme.titleLarge,
+                          textAlign: TextAlign.center,
+                          style: Theme.of(context).textTheme.titleMedium,
                         ),
                         const SizedBox(
                           height: 20,
@@ -55,19 +57,23 @@ class SplashPage extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const HomePages()),
+                                builder: (context) => const HomePages(),
+                              ),
                             );
                           },
                           child: Container(
-                            height: 30,
+                            height: 70,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(16),
                               color: const Color(0xff34b6ff),
                               gradient: const LinearGradient(
                                 colors: [
-                                  Color(0xff34b6ff),
+                                  Color(0xff24b6ff),
                                   Color(0xff38c5ff),
                                 ],
+                                stops: [0, 1],
+                                begin: Alignment.centerRight,
+                                end: Alignment.centerLeft,
                               ),
                             ),
                             child: Row(
@@ -96,9 +102,10 @@ class SplashPage extends StatelessWidget {
                   top: 0,
                   left: 0,
                   right: 0,
-                  bottom: 100,
+                  bottom: 120,
                   child: Image.asset(
                     'assets/bg-splash.png',
+                    height: 100,
                     fit: BoxFit.contain,
                   ))
             ],
